@@ -1,17 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { LayoutCustom } from './Layouts/LayoutCustom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <h2>Seniusin Anton CR-193</h2>
-        </p>
-      </header>
-    </div>
+      <>
+        <LayoutCustom></LayoutCustom>
+      </>
   );
 }
 
