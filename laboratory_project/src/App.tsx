@@ -10,7 +10,6 @@ function App() {
         <p>
           <h2>Seniusin Anton CR-193</h2>
         </p>
-       
       </header>
     </div>
   );
