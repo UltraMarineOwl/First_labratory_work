@@ -7,22 +7,22 @@ const { Header, Content, Footer } = Layout;
 const Informations = [
     {
         id: 1,
-        title: "This is title",
+        title: "This is title number 1",
         description: "This is description"
     },
     {
         id: 2,
-        title: "This is title",
+        title: "This is title number 2",
         description: "This is description"
     },
     {
         id: 3,
-        title: "This is title",
+        title: "This is title number 3",
         description: "This is description"
     },
     {
         id: 4,
-        title: "This is title",
+        title: "This is title number 4",
         description: "This is description"
     },
 ]
@@ -57,7 +57,7 @@ export const LayoutCustom = () =>{
                         }
                     </div>
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                {/*<Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>*/}
             </Layout>,
         </>
     )
