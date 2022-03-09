@@ -1,10 +1,14 @@
 import './FormsStyle.css';
 import { Form, Input, InputNumber, Button } from 'antd';
+import {useState} from "react";
 
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
 };
+
+// const { name, setName} = useState('');
+
 
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
@@ -22,6 +26,8 @@ const validateMessages = {
 export const Forms = () => {
     const onFinish = (values: any) => {
         console.log(values);
+        const myJSON = JSON.stringify(values);
+        alert(myJSON);
     };
 
     return (
@@ -34,9 +40,6 @@ export const Forms = () => {
             </Form.Item>
             <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99 }]}>
                 <InputNumber />
-            </Form.Item>
-            <Form.Item name={['user', 'website']} label="Website">
-                <Input />
             </Form.Item>
             <Form.Item name={['user', 'introduction']} label="Introduction">
                 <Input.TextArea />

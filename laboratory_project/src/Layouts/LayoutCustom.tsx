@@ -1,6 +1,7 @@
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { ContentLayout } from './ContentLayout';
 import './LayoutC.css';
+import { Forms } from '../Form/Forms';
 
 const { Header, Content, Footer } = Layout;
 
@@ -25,6 +26,13 @@ const Informations = [
         title: "This is title number 4",
         description: "This is description"
     },
+    {
+        id: 5,
+        title: "This is title number 5",
+        description: "This is description"
+    },
+
+
 ]
 
 
@@ -48,6 +56,7 @@ export const LayoutCustom = () =>{
                         <Breadcrumb.Item>App</Breadcrumb.Item>
                         <Breadcrumb.Item>ThisNode</Breadcrumb.Item>
                     </Breadcrumb>
+
                     <div className="site-layout-content">
                         {   Informations.map((el, index) =>{
                             return(
@@ -55,9 +64,10 @@ export const LayoutCustom = () =>{
                             )
                         })
                         }
+
                     </div>
+                    <Forms></Forms>
                 </Content>
-                {/*<Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>*/}
             </Layout>,
         </>
     )
