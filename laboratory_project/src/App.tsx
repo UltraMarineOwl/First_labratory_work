@@ -8,7 +8,6 @@ function App() {
   return (
       <>
         <LayoutCustom></LayoutCustom>
-          <Forms></Forms>
           <FooterNow></FooterNow>
       </>
   );
