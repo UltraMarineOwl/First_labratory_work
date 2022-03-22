@@ -2,6 +2,8 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { ContentLayout } from './ContentLayout';
 import './LayoutC.css';
 import { Forms } from '../Form/Forms';
+import {Routes} from "../Routes/Routes";
+import {Link} from "react-router-dom";
 
 const { Header, Content, Footer } = Layout;
 
@@ -43,9 +45,8 @@ export const LayoutCustom = () =>{
                 <Header>
                     <div className="logo" />
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                        {new Array(4).fill(null).map((_, index) => {
-                            const key = index + 1;
-                            return <Menu.Item key={key}>{`I am bar ${key}`}</Menu.Item>;
+                        {Routes.map((route) => {
+                            return <Menu.Item key={ route.id } ><Link to={route.path}>{route.name}</Link></Menu.Item>;
                         })}
                     </Menu>
                 </Header>
@@ -64,7 +65,6 @@ export const LayoutCustom = () =>{
                             )
                         })
                         }
-
                     </div>
                     <Forms></Forms>
                 </Content>
