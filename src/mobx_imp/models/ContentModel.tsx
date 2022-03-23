@@ -12,7 +12,6 @@ export const ContentModel = types.model('ContentModel', {
         get isSeen() {
             return self.seen
         },
-
         findInTitle(param: any) {
             self.title.includes(param)
         }
