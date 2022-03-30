@@ -1,4 +1,5 @@
-import { types} from 'mobx-state-tree'
+import {getParent, getParentOfType, types} from 'mobx-state-tree'
+import LocalStorage from "../local_store/LocalStorage";
 
 export const ContentModel = types.model('ContentModel', {
     id: types.identifier,
@@ -29,5 +30,10 @@ export const ContentModel = types.model('ContentModel', {
         changeAvailable(state: boolean){
             console.log('state of available', state)
             self.available = state
+        },
+
+        addToList(){
+             const {addContent} = getParentOfType(self, LocalStorage)
+            addContent(self)
         }
     }))
