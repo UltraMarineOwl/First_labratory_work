@@ -32,6 +32,7 @@ export const ContentModel = types.model('ContentModel', {
             self.available = state
         },
 
+        
         addToList(){
              const {addContent} = getParentOfType(self, LocalStorage)
             addContent(self)
