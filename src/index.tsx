@@ -1,15 +1,31 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import storageContain from "./mobx_imp/local_store/StoreContain";
+import { ILocalStorage} from "./Interfaces/interface";
+
+const StoreContent = React.createContext<ILocalStorage | any>(null)
+
+export const useLocalStorage = () => React.useContext(StoreContent)
+
+const StoreContain = ({ children }: { children: ReactElement}) =>{
+    return(
+        <StoreContent.Provider value={ storageContain }>
+            {children}
+        </StoreContent.Provider>
+    )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
+      {/*<BrowserRouter>*/}
+          <StoreContain>
+              <App />
+          </StoreContain>
+      {/*</BrowserRouter>*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

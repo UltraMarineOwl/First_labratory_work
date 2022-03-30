@@ -4,51 +4,25 @@ import './LayoutC.css';
 import { Forms } from '../Form/Forms';
 import {Routes} from "../Routes/Routes";
 import {Link} from "react-router-dom";
+import { CustomCards } from './CustomCards'
+import {IContentModel} from "../Interfaces/interface";
+import { useLocalStorage } from "../index";
+import {observer} from "mobx-react-lite";
 
 const { Header, Content, Footer } = Layout;
 
-const Informations = [
-    {
-        id: 1,
-        title: "This is title number 1",
-        description: "This is description"
-    },
-    {
-        id: 2,
-        title: "This is title number 2",
-        description: "This is description"
-    },
-    {
-        id: 3,
-        title: "This is title number 3",
-        description: "This is description"
-    },
-    {
-        id: 4,
-        title: "This is title number 4",
-        description: "This is description"
-    },
-    {
-        id: 5,
-        title: "This is title number 5",
-        description: "This is description"
-    },
-
-
-]
-
-
-export const LayoutCustom = () =>{
+export const LayoutCustom = observer(() =>{
+    const { content } = useLocalStorage()
     return(
         <>
             <Layout className="layout">
                 <Header>
                     <div className="logo" />
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                        {Routes.map((route) => {
-                            return <Menu.Item key={ route.id } ><Link to={route.path}>{route.name}</Link></Menu.Item>;
-                        })}
-                    </Menu>
+                    {/*<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>*/}
+                    {/*    {Routes.map((route) => {*/}
+                    {/*        return <Menu.Item key={ route.id } ><Link to={route.path}>{route.name}</Link></Menu.Item>;*/}
+                    {/*    })}*/}
+                    {/*</Menu>*/}
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
@@ -59,9 +33,9 @@ export const LayoutCustom = () =>{
                     </Breadcrumb>
 
                     <div className="site-layout-content">
-                        {   Informations.map((el, index) =>{
+                        {   content.map((content: IContentModel) =>{
                             return(
-                                <ContentLayout key={el.id} title={el.title} description={el.description} />
+                                <CustomCards key={content.id} content = { content } />
                             )
                         })
                         }
@@ -71,7 +45,7 @@ export const LayoutCustom = () =>{
             </Layout>,
         </>
     )
-}
+})
 
 // export const Layout1 = () =>{
 //     return(
