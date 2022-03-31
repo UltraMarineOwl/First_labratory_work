@@ -23,6 +23,7 @@ export const LayoutCustom = observer(() =>{
                     {/*        return <Menu.Item key={ route.id } ><Link to={route.path}>{route.name}</Link></Menu.Item>;*/}
                     {/*    })}*/}
                     {/*</Menu>*/}
+                    
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
