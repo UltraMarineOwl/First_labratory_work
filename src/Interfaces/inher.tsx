@@ -1,13 +1,8 @@
 import InheritageFile from "./inheritageFile";
 import React, { useState } from 'react';
 import { Table, Radio, Divider } from 'antd';
-// import Inheritage from "./inheritage";
 
 const columns = [
-    // {
-    //     title: 'Id',
-    //     dataIndex: 'id',
-    // },
     {
         title: 'First name',
         dataIndex: 'firstname',
@@ -38,13 +33,6 @@ const columns = [
     },
 ];
 
-interface DataType {
-    id: React.Key;
-    firstname: string;
-    secondname: string;
-    info: string;
-    favDist: string;
-}
 
 const data: InheritageFile[] =[
     {
@@ -70,7 +58,7 @@ const data: InheritageFile[] =[
 ]
 
 const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
+    onChange: (selectedRowKeys: React.Key[], selectedRows: InheritageFile[]) => {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
     },
     getCheckboxProps: (record: InheritageFile) => ({
@@ -84,18 +72,6 @@ export const Inher = () => {
     const [selectionType, setSelectionType] = useState<'checkbox' | 'radio'>('checkbox');
 
     return(
-        // <div>
-        //     {
-        //         props.Inter2.username
-        //     }
-        //     {
-        //         props.Inter.id
-        //     }
-        //     {
-        //         props.Inter.firstname
-        //     }
-        // </div>
-
         <div>
             <Radio.Group
                 onChange={({ target: { value } }) => {
@@ -118,7 +94,6 @@ export const Inher = () => {
                 dataSource={data}
             />
         </div>
-
     )
 }
 
