@@ -1,15 +1,32 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { ContentLayout } from './ContentLayout';
+import { Layout, /*Menu,*/ Breadcrumb } from 'antd';
+// import { ContentLayout } from './ContentLayout';
 import './LayoutC.css';
 import { Forms } from '../Form/Forms';
-import {Routes} from "../Routes/Routes";
-import {Link} from "react-router-dom";
+// import {Routes} from "../Routes/Routes";
+// import {Link} from "react-router-dom";
 import { CustomCards } from './CustomCards'
 import {IContentModel} from "../Interfaces/interface";
 import { useLocalStorage } from "../index";
 import {observer} from "mobx-react-lite";
+import Inher from "../Interfaces/inher";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
+
+
+
+
+
+const inherInfo ={
+    id: 1,
+    firstname: 'John',
+    secondname: 'Doe',
+    info: 'I am the white hat',
+    favDist: 'Debian',
+    username: 'Cocktail',
+    key: 4357,
+    w_mrrobot: 'Yes'
+}
+
 
 export const LayoutCustom = observer(() =>{
     const { content } = useLocalStorage()
@@ -41,6 +58,7 @@ export const LayoutCustom = observer(() =>{
                         })
                         }
                     </div>
+                    <Inher ></Inher>
                     <Forms></Forms>
                 </Content>
             </Layout>,
