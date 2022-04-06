@@ -13,21 +13,6 @@ import Inher from "../Interfaces/inher";
 const { Header, Content } = Layout;
 
 
-
-
-
-const inherInfo ={
-    id: 1,
-    firstname: 'John',
-    secondname: 'Doe',
-    info: 'I am the white hat',
-    favDist: 'Debian',
-    username: 'Cocktail',
-    key: 4357,
-    w_mrrobot: 'Yes'
-}
-
-
 export const LayoutCustom = observer(() =>{
     const { content } = useLocalStorage()
     return(
