@@ -30,7 +30,47 @@ const storageContain = LocalStorage.create({
             seen: false,
             notes: '',
             available: false,
-        }
+        },
+        {
+            id: '5',
+            title: 'Neko cafe',
+            description: 'Time to play with cats and drink overpriced coffee',
+            seen: false,
+            notes: '',
+            available: false,
+        },
+        {
+            id: '6',
+            title: 'Neko cafe',
+            description: 'Time to play with cats and drink overpriced coffee',
+            seen: false,
+            notes: '',
+            available: false,
+        },
+        {
+            id: '7',
+            title: 'Neko cafe',
+            description: 'Time to play with cats and drink overpriced coffee',
+            seen: false,
+            notes: '',
+            available: false,
+        },
+        {
+            id: '8',
+            title: 'Neko cafe',
+            description: 'Time to play with cats and drink overpriced coffee',
+            seen: false,
+            notes: '',
+            available: false,
+        },
+        {
+            id: '9',
+            title: 'Neko cafe',
+            description: 'Time to play with cats and drink overpriced coffee',
+            seen: false,
+            notes: '',
+            available: false,
+        },
     ]
 })
 

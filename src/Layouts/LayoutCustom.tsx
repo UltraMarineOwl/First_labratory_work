@@ -9,6 +9,7 @@ import {IContentModel} from "../Interfaces/interface";
 import { useLocalStorage } from "../index";
 import {observer} from "mobx-react-lite";
 import Inher from "../Interfaces/inher";
+import {FooterNow} from "./FooterFor";
 
 const { Header, Content } = Layout;
 
@@ -43,8 +44,9 @@ export const LayoutCustom = observer(() =>{
                         })
                         }
                     </div>
-                    <Inher ></Inher>
+                    <Inher></Inher>
                     <Forms></Forms>
+                    <FooterNow></FooterNow>
                 </Content>
             </Layout>,
         </>
