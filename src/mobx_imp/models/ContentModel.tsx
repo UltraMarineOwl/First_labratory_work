@@ -20,6 +20,7 @@ export const ContentModel = types.model('ContentModel', {
     .actions((self) => ({
         changeNotes(value: string) {
             self.notes = value
+            console.log(">>note", self.notes)
         },
 
         changeSeen(state: boolean) {
