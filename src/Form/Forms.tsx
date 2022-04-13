@@ -26,6 +26,7 @@ const validateMessages = {
 export const Forms = () => {
     const onFinish = (values: any) => {
         console.log(values);
+        // localStorage.setItem('values', JSON.stringify(values));
         const myJSON = JSON.stringify(values);
         alert(myJSON);
     };
