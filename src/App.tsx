@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import { LayoutCustom } from './Layouts/LayoutCustom'
-import { FooterNow } from './Layouts/FooterFor';
+import {HeaderLayout} from "./Layouts/HeaderLayout";
 
 function App() {
   return (
       <>
+          <HeaderLayout></HeaderLayout>
         <LayoutCustom></LayoutCustom>
       </>
   );

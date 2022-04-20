@@ -21,11 +21,11 @@ const StoreContain = ({ children }: { children: ReactElement}) =>{
 
 ReactDOM.render(
   <React.StrictMode>
-      {/*<BrowserRouter>*/}
+      <BrowserRouter>
           <StoreContain>
               <App />
           </StoreContain>
-      {/*</BrowserRouter>*/}
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
