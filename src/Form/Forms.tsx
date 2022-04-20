@@ -26,8 +26,7 @@ export const Forms = () => {
         console.log(values);
         localStorage.setItem('values', JSON.stringify(values));
         const itemL = localStorage.getItem("")
-        const myJSON = JSON.stringify(values);
-        //alert(myJSON);
+        // localStorage.setItem('values', JSON.stringify(values))
     };
 
     // const getStorageValue = (key, defaultValue) =>{
