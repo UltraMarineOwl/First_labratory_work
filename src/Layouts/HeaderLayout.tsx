@@ -9,7 +9,7 @@ export const HeaderLayout = () => {
             <div className='logo' />
             <Menu theme='dark' mode='horizontal' defaultSelectedKeys={ [ '2' ] }>
                 { Router.map((route) => {
-                    return <Menu.Item key={ `${route.id}` }><Link to={ `${ route.path}` }>{ route.name }</Link></Menu.Item>
+                    return <Menu.Item key={ route.id }><Link to={ `${ route.path}` }>{ route.name }</Link></Menu.Item>
                 }) }
             </Menu>
         </Header>

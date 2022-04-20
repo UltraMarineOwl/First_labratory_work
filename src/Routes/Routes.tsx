@@ -2,22 +2,22 @@ import {v4 as uuid} from 'uuid';
 
 export const Router = [
     {
-      id: uuid,
+      id: uuid(),
         path: '/home',
         name: 'Home'
     },
     {
-        id: uuid,
+        id: uuid(),
         path: '/cards',
         name: 'Cards'
     },
     {
-        id: uuid,
+        id: uuid(),
         path: '/table',
         name: 'Popular Hats'
     },
     {
-        id: uuid,
+        id: uuid(),
         path: '/form',
         name: 'Form'
     }
