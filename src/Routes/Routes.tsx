@@ -1,6 +1,6 @@
 import {v4 as uuid} from 'uuid';
 
-export const Routes = [
+export const Router = [
     {
       id: uuid,
         path: '/home',
@@ -8,17 +8,17 @@ export const Routes = [
     },
     {
         id: uuid,
+        path: '/cards',
+        name: 'Cards'
+    },
+    {
+        id: uuid,
+        path: '/table',
+        name: 'Popular Hats'
+    },
+    {
+        id: uuid,
         path: '/form',
         name: 'Form'
-    },
-    {
-        id: uuid,
-        path: '/title',
-        name: 'title'
-    },
-    {
-        id: uuid,
-        path: '/notes',
-        name: 'Notes'
     }
 ]

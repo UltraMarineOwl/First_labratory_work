@@ -1,33 +1,20 @@
-import { Layout, /*Menu,*/ Breadcrumb } from 'antd';
-// import { ContentLayout } from './ContentLayout';
+import { Layout, Breadcrumb } from 'antd';
 import './LayoutC.css';
 import { Forms } from '../Form/Forms';
-// import {Routes} from "../Routes/Routes";
-// import {Link} from "react-router-dom";
-import { CustomCards } from './CustomCards'
-import {IContentModel} from "../Interfaces/interface";
-import { useLocalStorage } from "../index";
+import {Router} from "../Routes/Routes";
 import {observer} from "mobx-react-lite";
 import Inher from "../Interfaces/inher";
 import {FooterNow} from "./FooterFor";
+import {Route, Routes} from "react-router-dom";
+import {Articles} from "../Articles/Article";
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 
 export const LayoutCustom = observer(() =>{
-    const { content } = useLocalStorage()
     return(
         <>
             <Layout className="layout">
-                <Header>
-                    <div className="logo" />
-                    {/*<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>*/}
-                    {/*    {Routes.map((route) => {*/}
-                    {/*        return <Menu.Item key={ route.id } ><Link to={route.path}>{route.name}</Link></Menu.Item>;*/}
-                    {/*    })}*/}
-                    {/*</Menu>*/}
-                    
-                </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
@@ -36,27 +23,18 @@ export const LayoutCustom = observer(() =>{
                         <Breadcrumb.Item>ThisNode</Breadcrumb.Item>
                     </Breadcrumb>
 
-                    <div className="site-layout-content">
-                        {   content.map((content: IContentModel) =>{
-                            return(
-                                <CustomCards key={content.id} content = { content } />
-                            )
-                        })
-                        }
-                    </div>
-                    <Inher></Inher>
-                    <Forms></Forms>
+                    <Routes>
+                        <Route path={ Router[0].path } />
+                        <Route path={ Router[1].path } element={ <Articles /> } />
+                        <Route path={ Router[2].path } element={ <Inher /> } />
+                        <Route path={ Router[3].path } element={ <Forms /> } />
+                    </Routes>
+
+                    {/*<Inher></Inher>*/}
+                    {/*<Forms></Forms>*/}
                     <FooterNow></FooterNow>
                 </Content>
             </Layout>,
         </>
     )
 })
-
-// export const Layout1 = () =>{
-//     return(
-//         <>
-//             <div>test</div>
-//         </>
-//     )
-// }
