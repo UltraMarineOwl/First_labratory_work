@@ -7,8 +7,6 @@ import { IContentModel } from "../Interfaces/interface";
 export const CustomCards = observer(({ content }:{ content: IContentModel})=>{
     const { title, description, notes, available, seen,isSeen, changeNotes, changeAvailable, changeSeen, addToList} = content
 
-
-
     useEffect(() =>{
         if(isSeen){
             alert(`Is seen ${ title }`)

@@ -1,4 +1,4 @@
-import {getParent, getParentOfType, types} from 'mobx-state-tree'
+import { getParentOfType, types} from 'mobx-state-tree'
 import LocalStorage from "../local_store/LocalStorage";
 
 export const ContentModel = types.model('ContentModel', {

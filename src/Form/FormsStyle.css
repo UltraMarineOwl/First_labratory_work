@@ -1,9 +1,17 @@
 @import '~antd/dist/antd.css';
 
 .ant-input{
-    width: 50%;
+    width: 100%;
 }
 
 .ant-card {
     text-align: center;
 }
+
+.ant-input-affix-wrapper {
+    width:50%;
+}
+
+/*console.log(values);*/
+/*localStorage.setItem('values', JSON.stringify(values));*/
+/*const itemL = localStorage.getItem("")*/

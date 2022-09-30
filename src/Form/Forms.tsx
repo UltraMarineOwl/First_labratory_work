@@ -1,44 +1,50 @@
-import './FormsStyle.css';
-import { Form, Input, InputNumber, Button, Checkbox} from 'antd';
-
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-};
-
-// const { name, setName} = useState('');
-
-
-/* eslint-disable no-template-curly-in-string */
-const validateMessages = {
-    required: '${label} is required!',
-    types: {
-        number: '${label} is not a valid number!',
-    },
-    number: {
-        range: '${label} must be between ${min} and ${max}',
-    },
-};
-/* eslint-enable no-template-curly-in-string */
+import { Form, Input, Button, Checkbox } from 'antd';
+import {useEffect, useState} from "react";
 
 export const Forms = () => {
+
     const onFinish = (values: any) => {
-        console.log(values);
-        localStorage.setItem('values', JSON.stringify(values));
-        const itemL = localStorage.getItem("")
-        // localStorage.setItem('values', JSON.stringify(values))
+        console.log('Success:', values);
+        const saved = localStorage.getItem('values');
+        const saved1 = JSON.stringify(values);
+        console.log(saved);
+        if (saved == saved1){
+            alert("Success of input");
+        }
+        if (values != localStorage.getItem('values')){
+            localStorage.setItem('values', JSON.stringify(values));
+        }
     };
 
-    // const getStorageValue = (key, defaultValue) =>{
-    //     const saved = localStorage.getItem(key);
-    //
-    // }
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+        alert("Not enough data performed")
+    };
+
+    const checkStorage = (values : any ) => {
+        const storedData = localStorage.getItem(values);
+        alert(storedData);
+        if (!storedData) console.log('Local storage is empty');
+    }
 
     return (
-        <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-            <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
+        <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+        >
+            <Form.Item
+                label="Username"
+                name="username"
+                rules={[{ required: true, message: 'Please input your username!' }]}
+            >
                 <Input />
             </Form.Item>
+
             <Form.Item
                 label="Password"
                 name="password"
@@ -46,24 +52,16 @@ export const Forms = () => {
             >
                 <Input.Password />
             </Form.Item>
-            <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99 }]}>
-                <InputNumber />
-            </Form.Item>
-            <Form.Item name={['user', 'introduction']} label="Introduction">
-                <Input.TextArea />
-            </Form.Item>
+
             <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
                 <Checkbox>Remember me</Checkbox>
             </Form.Item>
-            <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                 <Button type="primary" htmlType="submit">
                     Submit
                 </Button>
             </Form.Item>
-
         </Form>
-
     );
-
-
 };
