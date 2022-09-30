@@ -1,5 +1,5 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-const { Header, Content, Footer } = Layout;
+import { Layout } from 'antd';
+const {  Footer } = Layout;
 export const FooterNow = () =>{
     return(
         <Layout>
