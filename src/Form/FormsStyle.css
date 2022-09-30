@@ -9,9 +9,6 @@
 }
 
 .ant-input-affix-wrapper {
-    width:50%;
-}
 
-/*console.log(values);*/
-/*localStorage.setItem('values', JSON.stringify(values));*/
-/*const itemL = localStorage.getItem("")*/
+    width: 50%;
+}
